@@ -20,7 +20,7 @@ export default defineConfig({
     },
   },
   server: {
-    host: '0.0.0.0',
-    port: parseInt(process.env.PORT) || 4173, 
+    host: '0.0.0.0', // Omogućuje mrežni pristup
+    port: parseInt(process.env.PORT) || 4173, // Koristi $PORT varijablu ili default port 4173
   },
 });

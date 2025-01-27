@@ -1,34 +1,28 @@
 <template>
-  <v-app>
-    <!-- Navigacija sa sidebarom -->
+  <v-app class="full-screen-app">
     <Sidebar />
-    <v-main>
+    <v-main style="padding: 20px 60px; justify-content: center;">
       <router-view />
     </v-main>
   </v-app>
 </template>
 
 <script>
-import { onMounted } from 'vue'; // Lifecycle hook
-import { useTasksStore } from './stores/tasks'; // Pinia store
-import Sidebar from './components/Sidebar.vue'; // Sidebar komponenta
+import Sidebar from './components/Sidebar.vue';
 
 export default {
   components: { Sidebar },
-  setup() {
-    const tasksStore = useTasksStore(); // Pristup Pinia store-u
-
-    // Pozivanje fetchTasks() pri pokretanju aplikacije
-    onMounted(() => {
-      console.log('App.vue mounted, fetching tasks...'); // Debugging
-      tasksStore.fetchTasks(); // Dohvati zadatke iz LocalStorage-a
-    });
-
-    return {};
-  },
 };
 </script>
 
 <style>
-/* Globalni stilovi aplikacije */
+#app {
+  width: 100%;
+  height: 100%;
+}
+
+.v-application {
+  width: 100%;
+  height: 100%;
+}
 </style>

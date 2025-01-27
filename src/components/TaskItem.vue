@@ -3,16 +3,16 @@
     <input
       type="checkbox"
       :checked="task.completed"
-      @change="$emit('toggle-completion', task.id)"
+      @change="$emit('toggle-completion', task.id)" 
     />
     <span :class="{ completed: task.completed }">{{ task.text }}</span>
-    <button @click="$emit('delete-task', task.id)">X</button>
+    <button class="delete-btn" @click="$emit('delete-task', task.id)">X</button> <!--PRIMJER-emitiranje eventa-->
   </div>
 </template>
 
 <script>
 export default {
-  props: ['task'],
+  props: ['task'], //PRIMJER-bez stanja
 };
 </script>
 
@@ -25,5 +25,14 @@ export default {
 }
 .completed {
   text-decoration: line-through;
+}
+.delete-btn {
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+}
+.delete-btn:hover {
+  color: darkred;
 }
 </style>

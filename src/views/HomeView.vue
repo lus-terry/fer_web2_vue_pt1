@@ -15,11 +15,9 @@ import TaskList from '../components/TaskList.vue';
 export default {
   components: { AddTaskForm, TaskList },
   setup() {
-    const tasksStore = useTasksStore(); // Dohvati Pinia store
+    const tasksStore = useTasksStore();
 
-    // Lifecycle hook za dohvaćanje zadataka
     onMounted(() => {
-      console.log('Fetching tasks on mount...');
       tasksStore.fetchTasks();
     });
 

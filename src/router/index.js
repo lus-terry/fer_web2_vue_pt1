@@ -1,12 +1,16 @@
 import { createRouter, createWebHistory } from 'vue-router';
-import HomeView from '../views/HomeView.vue';
-import List from '@/components/List.vue';
-import NotFoundView from '../views/NotFound.vue';
+const List = () => import('@/components/List.vue'); //PRIMJER-lazy loading
+const NotFoundView = () => import('../views/NotFound.vue');
 
 const routes = [
-  { path: '/', name: 'Default', component: HomeView },
-  { path: '/:listName', name: 'ListView', component: List },
-  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFoundView },
+  { path: '/', redirect: '/life' },
+  {
+    path: '/:listName', //PRIMJER-rute, bookmarkable
+    name: 'ListView',
+    component: List,
+    props: (route) => ({ defaultList: route.params.listName || 'life' }),
+  },
+  { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFoundView }, //PRIMJER-404
 ];
 
 const router = createRouter({

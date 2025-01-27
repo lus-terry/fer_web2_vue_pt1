@@ -1,6 +1,6 @@
 # todo-app
 
-Osim u popisu koji slijedi, primjeri su označeni i pomoću komentara te ih je lako pronaći pomoću search opcije.
+Osim u popisu koji slijedi, primjeri su označeni i pomoću komentara te ih je lako pronaći pomoću search opcije (potrebno je pretražiti riječ "PRIMJER").
 ![image](https://github.com/user-attachments/assets/9740e03f-a987-43af-99b6-8619a4914cf2)
 
 

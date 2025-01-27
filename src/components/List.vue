@@ -2,7 +2,7 @@
   <div>
     <div class="header">
       <div class="date-container">
-        <p class="month">{{ currentMonth }}</p> //PRIMJER-One-way Binding
+        <p class="month">{{ currentMonth }}</p> <!--PRIMJER-One-way Binding-->
         <p class="day">{{ currentDay }}</p>
       </div>
 

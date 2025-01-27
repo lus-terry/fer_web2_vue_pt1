@@ -1,12 +1,12 @@
 <template>
   <form @submit.prevent="addNewTask" class="task-form">
-    <!--PRIMJER-One-way Binding-->
+   <!--PRIMJER-Two-way Binding-->
     <input
       v-model="newTask" 
       type="text"
       placeholder="Enter a new task"
       class="task-input"
-    />
+    /> 
     <v-btn type="submit" color="primary" class="custom-btn" style="height: 45px;">
       Add Task
     </v-btn>

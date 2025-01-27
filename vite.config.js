@@ -1,8 +1,8 @@
-import { fileURLToPath, URL } from 'node:url'
+import { fileURLToPath, URL } from 'node:url';
 
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import vueDevTools from 'vite-plugin-vue-devtools'
+import { defineConfig } from 'vite';
+import vue from '@vitejs/plugin-vue';
+import vueDevTools from 'vite-plugin-vue-devtools';
 import vuetify from 'vite-plugin-vuetify';
 
 // https://vite.dev/config/
@@ -11,12 +11,16 @@ export default defineConfig({
     vue(),
     vueDevTools(),
     vuetify({
-      autoImport: true, 
+      autoImport: true,
     }),
   ],
   resolve: {
     alias: {
-      '@': fileURLToPath(new URL('./src', import.meta.url))
+      '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },
-})
+  server: {
+    host: '0.0.0.0', 
+    port: parseInt(process.env.PORT) || 4173, 
+  },
+});
